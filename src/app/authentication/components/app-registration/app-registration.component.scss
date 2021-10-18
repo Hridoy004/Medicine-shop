@@ -1,24 +1,26 @@
-.loin-with-email-wrapper {
+.registration-form-wrapper {
   width: 480px;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   .card-padding {
     padding: 40px;
 
+
     .login-header {
-      margin-bottom: 20px;
+
+      //margin-bottom: 30px;
 
       .header-logo {
         width: 70px;
-        /*display: block;
-        margin: 0 auto;*/
+        //display: block;
+        //margin: 0 auto;
       }
 
       .header-title {
-        /*text-align: center;*/
+        //text-align: center;
       }
     }
 
@@ -33,3 +35,8 @@
 .margin-top-16 {
   margin-top: 16px;
 }
+
+.header-logo {
+  width: 60px;
+}
+

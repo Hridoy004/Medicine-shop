@@ -8,6 +8,8 @@ import { Error404Component } from './components/error404/error404.component';
 import {AppGenericsModule} from "../app-generics/app-generics.module";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BlogService} from "./services/blog.service";
+import {BackendService} from "./services/backend.service";
 
 
 @NgModule({
@@ -23,7 +25,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    BlogService,
+    BackendService
+  ],
   bootstrap: [
     RootDefaultComponent
   ]

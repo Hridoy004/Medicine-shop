@@ -3,13 +3,13 @@
 
     <mat-card class="card-padding">
 
-      <div>
+      <div class="login-header" fxLayout="column" fxLayoutAlign="center center">
         <img class="header-logo" src="assets/img/drug.png" alt="login logo">
-        <p class="header-title">Login to the website</p>
+        <p class="header-title"><b>Login to the website</b></p>
       </div>
 
 
-      <form [formGroup]="loginForm">
+      <form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
         <mat-form-field>
           <mat-label>Email *</mat-label>
           <input matInput formControlName="Email" placeholder="Email">
@@ -32,7 +32,7 @@
 
         </mat-form-field>
 
-        <button mat-raised-button color="primary" class="margin-top-16" [disabled]="loginForm.invalid">Submit</button>
+        <button mat-raised-button color="primary" class="margin-top-16" [disabled]="loginForm.invalid" type="submit">Submit</button>
 
       </form>
 
