@@ -13,11 +13,12 @@ export class AppRegistrationComponent implements OnInit {
     Email: new FormControl('', [
       Validators.email, Validators.required
     ]),
-    Password: new FormControl('', [
-      Validators.required, Validators.minLength(8)
+      Password: new FormControl('', [
+        Validators.required, Validators.minLength(8)
     ]),
     FirstName: new FormControl('', [Validators.required, Validators.maxLength(50)]),
     LastName: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+    PhoneNumber: new FormControl('', [Validators.required, Validators.minLength(10)]),
   })
 
   constructor(private backendService: BackendService) {

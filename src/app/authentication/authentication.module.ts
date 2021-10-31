@@ -11,13 +11,15 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { AppRegistrationComponent } from './components/app-registration/app-registration.component';
+import { MatSnackBarModule} from "@angular/material/snack-bar";
+
 
 
 @NgModule({
   declarations: [
     LoginWithEmailComponent,
     AuthenticationDefaultComponent,
-    AppRegistrationComponent
+    AppRegistrationComponent,
   ],
     imports: [
         CommonModule,
@@ -27,7 +29,8 @@ import { AppRegistrationComponent } from './components/app-registration/app-regi
         MatInputModule,
         MatButtonModule,
         MatCardModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatSnackBarModule
     ]
 })
 export class AuthenticationModule { }

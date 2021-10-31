@@ -17,7 +17,7 @@
 
           <mat-error>
             <p *ngIf="registrationForm.controls.FirstName.hasError('required')">First name is required</p>
-            <p *ngIf="registrationForm.controls.FirstName.hasError('email')">Maximum character limit 50</p>
+            <p *ngIf="registrationForm.controls.FirstName.hasError('maxlength')">Maximum character limit 50</p>
           </mat-error>
 
         </mat-form-field>
@@ -28,7 +28,7 @@
 
           <mat-error>
             <p *ngIf="registrationForm.controls.LastName.hasError('required')">Last name is required</p>
-            <p *ngIf="registrationForm.controls.LastName.hasError('email')">Maximum character limit 50</p>
+            <p *ngIf="registrationForm.controls.LastName.hasError('maxlength')">Maximum character limit 50</p>
           </mat-error>
 
         </mat-form-field>
@@ -38,8 +38,19 @@
           <input matInput formControlName="Email" placeholder="Email">
 
           <mat-error>
-            <p *ngIf="registrationForm.controls.Email.hasError('required')">Email Address is required</p>
+            <p *ngIf="registrationForm.controls.Email.hasError('required')">Email address is required</p>
             <p *ngIf="registrationForm.controls.Email.hasError('email')">Invalid Email Address</p>
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="margin-top-16">
+          <mat-label>Phone Number *</mat-label>
+          <input matInput formControlName="PhoneNumber" placeholder="+880xxxxxxxxxx">
+
+          <mat-error>
+            <p *ngIf="registrationForm.controls.PhoneNumber.hasError('required')">Phone number is required</p>
+            <p *ngIf="registrationForm.controls.PhoneNumber.hasError('minlength')">Password needs to be at least 10 character long</p>
           </mat-error>
 
         </mat-form-field>

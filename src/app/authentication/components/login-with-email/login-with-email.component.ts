@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {BackendService} from "../../../root-browser/services/backend.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-login-with-email',
@@ -17,14 +19,26 @@ export class LoginWithEmailComponent implements OnInit {
     ])
   })
 
-  constructor() { }
+  constructor(private backendService: BackendService, private snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
+  showToast(message: string) {
+    this.snackbar.open(message, null, {
+      duration: 3000
+    });
+  }
+
   onLoginFormSubmit() {
     if(this.loginForm.valid) {
-      console.log(this.loginForm.getRawValue());
+      let payload = this.loginForm.getRawValue();
+      this.backendService.login(payload).subscribe((response: any) => {
+        this.showToast(response.message);
+      }, (error: any) => {
+        let errorMessage = error.error.message;
+        this.showToast(errorMessage);
+      })
     }
   }
 
