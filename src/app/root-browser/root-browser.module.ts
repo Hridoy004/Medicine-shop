@@ -10,12 +10,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BlogService} from "./services/blog.service";
 import {BackendService} from "./services/backend.service";
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     RootDefaultComponent,
     Error404Component,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
