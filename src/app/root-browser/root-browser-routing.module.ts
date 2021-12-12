@@ -2,13 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {Error404Component} from "./components/error404/error404.component";
 import {HomeComponent} from "./components/home/home.component";
-import {AuthenticationGuard} from "./guards/authentication.guard.service";
+import {AuthenticationGuard} from "./guards/authentication.guard";
+import {ProductsComponent} from "./components/products/products.component";
 
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'category',
+    component: ProductsComponent
   },
   {
     path: 'blog',
@@ -22,6 +27,11 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('../app-profile/app-profile.module').then(m => m.AppProfileModule),
+    canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('../contact/contact.module').then(m => m.ContactModule),
     canActivate: [AuthenticationGuard]
   },
   {

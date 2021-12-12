@@ -4,6 +4,8 @@ import {BackendService} from "../../../root-browser/services/backend.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {SessionService} from "../../../root-browser/services/session.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {UserService} from "../../../app-core/services/user.sevice";
+
 
 @Component({
   selector: 'app-login-with-email',
@@ -27,7 +29,8 @@ export class LoginWithEmailComponent implements OnInit {
               private snackbar: MatSnackBar,
               private sessionService: SessionService,
               private router: Router,
-              private routes: ActivatedRoute) {
+              private routes: ActivatedRoute,
+              private userService: UserService) {
 
   }
 
@@ -54,11 +57,18 @@ export class LoginWithEmailComponent implements OnInit {
         this.showToast(response.message);
         if(response && response.token) {
           this.sessionService.setToken(response.token);
-          if(this.redirect) {
-            this.router.navigate([this.redirect]);
-          } else {
-            this.router.navigate(['/blog']);
-          }
+          this.backendService.GetLoggedInUser().subscribe((response: any) => {
+            if(response && response.success) {
+              this.userService.setUserOnLoggedIn(response.data);
+              if(this.redirect) {
+                this.router.navigate([this.redirect]);
+              } else {
+                this.router.navigate(['/blog']);
+              }
+            } else {
+              this.showToast(response.message);
+            }
+          })
         }
       }, (error: any) => {
         let errorMessage = error.error.message;
@@ -66,5 +76,4 @@ export class LoginWithEmailComponent implements OnInit {
       })
     }
   }
-
 }

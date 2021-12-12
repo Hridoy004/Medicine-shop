@@ -27,7 +27,7 @@ $box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 .top-nav-header {
   padding: 20px;
-  background-color: RGB(25,118,210);
+  background-color: #2d99e3;
   top: 0;
   left: 0;
   right: 0;
@@ -35,51 +35,7 @@ $box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  .icons div {
-    font-size: 1.3rem;
-    margin-left: 1.7rem;
-    cursor: pointer;
-    color: $white;
-
-    &:hover {
-      color: $green;
-    }
   }
-
-/*  .search-from {
-    position: absolute;
-    top: 10%;
-    right: 2rem;
-    width: 50rem;
-    border-radius: .5rem;
-    display: flex;
-    align-items: center;
-    height: 5.5rem;
-    box-shadow: $box-shadow;
-    background: $white;
-
-    input {
-      height: 100%;
-      width: 100%;
-      padding: 0 1.2rem;
-      font-size: 1.6rem;
-      color: $black;
-      text-transform: none;
-    }
-
-    label{
-      font-size: 2.5rem;
-      margin-right: 1.7rem;
-      cursor: pointer;
-      color: $light-color;
-
-      &:hover {
-        color: $green;
-      }
-    }
-  }*/
-}
 
 .top-nav-header a,
 .top-nav-header a:active,
@@ -94,7 +50,7 @@ $box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
 .top-nav-header .header-title {
-  width: 60%;
+  width: 50%;
   float: left;
 }
 
@@ -102,7 +58,38 @@ $box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
   list-style: none;
   display: inline;
   margin-right: 25px;
-  width: 10px;
+  width: 15px;
+
+  #search-btn{
+    font-size: 1.2rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  #cart-btn{
+    font-size: 1.2rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  #login-btn{
+    font-size: 1.2rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $green;
+    }
+  }
 }
-
-

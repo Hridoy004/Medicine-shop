@@ -1,4 +1,4 @@
-import { Injectable} from "@angular/core";
+import { Injectable } from "@angular/core";
 
 export const TOKEN_KEY = "TOKEN";
 
@@ -10,7 +10,7 @@ export class SessionService {
 
   private session = sessionStorage;
 
-  public setToken(token: string): void{
+  public setToken(token: string): void {
     this.session.setItem(TOKEN_KEY, token);
   }
 

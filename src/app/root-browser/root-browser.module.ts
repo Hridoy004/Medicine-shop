@@ -12,7 +12,9 @@ import {BlogService} from "./services/blog.service";
 import {BackendService} from "./services/backend.service";
 import { HomeComponent } from './components/home/home.component';
 import { SessionService } from "./services/session.service";
-import {AuthenticationGuard} from "./guards/authentication.guard.service";
+import {AuthenticationGuard} from "./guards/authentication.guard";
+import { ProductsComponent } from './components/products/products.component';
+import {UserService} from "../app-core/services/user.sevice";
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import {AuthenticationGuard} from "./guards/authentication.guard.service";
     RootDefaultComponent,
     Error404Component,
     HomeComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import {AuthenticationGuard} from "./guards/authentication.guard.service";
     BlogService,
     BackendService,
     SessionService,
-    AuthenticationGuard
+    AuthenticationGuard,
+    UserService
   ],
   bootstrap: [
     RootDefaultComponent
