@@ -4,6 +4,7 @@ import {Error404Component} from "./components/error404/error404.component";
 import {HomeComponent} from "./components/home/home.component";
 import {AuthenticationGuard} from "./guards/authentication.guard";
 import {ProductsComponent} from "./components/products/products.component";
+import {CartComponent} from "./components/cart/cart.component";
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'category',
     component: ProductsComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   },
   {
     path: 'blog',

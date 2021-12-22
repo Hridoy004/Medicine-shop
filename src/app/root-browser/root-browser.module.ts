@@ -15,6 +15,9 @@ import { SessionService } from "./services/session.service";
 import {AuthenticationGuard} from "./guards/authentication.guard";
 import { ProductsComponent } from './components/products/products.component';
 import {UserService} from "../app-core/services/user.sevice";
+import { CartService} from "./services/cart.service";
+import { CartComponent } from './components/cart/cart.component';
+import {ProductService} from "./services/product.service";
 
 
 @NgModule({
@@ -23,6 +26,7 @@ import {UserService} from "../app-core/services/user.sevice";
     Error404Component,
     HomeComponent,
     ProductsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ import {UserService} from "../app-core/services/user.sevice";
     BackendService,
     SessionService,
     AuthenticationGuard,
-    UserService
+    UserService,
+    ProductService,
+    CartService
   ],
   bootstrap: [
     RootDefaultComponent
