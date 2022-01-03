@@ -18,6 +18,11 @@ import {UserService} from "../app-core/services/user.sevice";
 import { CartService} from "./services/cart.service";
 import { CartComponent } from './components/cart/cart.component';
 import {ProductService} from "./services/product.service";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import { CommentComponent } from './components/comment/comment.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { FilterPipe } from './shared/filter.pipe';
 
 
 @NgModule({
@@ -27,15 +32,20 @@ import {ProductService} from "./services/product.service";
     HomeComponent,
     ProductsComponent,
     CartComponent,
+    CommentComponent,
+    FilterPipe,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    RootBrowserRoutingModule,
-    AppGenericsModule,
-    HttpClientModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        RootBrowserRoutingModule,
+        AppGenericsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatIconModule,
+        MatFormFieldModule
+    ],
   providers: [
     BlogService,
     BackendService,

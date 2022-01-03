@@ -10,10 +10,7 @@
         <a routerLink="/home" routerLinkActive="active">Home</a>
       </li>
       <li>
-        <a routerLink="/category" routerLinkActive="active">Category</a>
-      </li>
-      <li>
-        <a routerLink="/blog" routerLinkActive="active">About</a>
+        <a routerLink="/category" routerLinkActive="active">Products</a>
       </li>
       <li>
         <a routerLink="/blog" routerLinkActive="active">Blog</a>
@@ -27,15 +24,16 @@
       <li>
         <a routerLink="/contact" routerLinkActive="active">Contact</a>
       </li>
-      <li>
-        <a id="search-btn" class="fas fa-search"></a>
+      <li class="search">
+        <input  style="width:300px; height:25px; border-radius:25px; border: none;" *ngIf="showMe" type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder=" search...">
+        <a (click)="toggleTag()" id="search-btn"  class="fas fa-search"></a>
       </li>
       <li>
         <a routerLink="cart" id="cart-btn" class="fas fa-cart-plus"></a>
         <a style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</a>
       </li>
       <li>
-        <a id="login-btn" class="fas fa-user"></a>
+        <a routerLink="/profile" id="login-btn" class="fas fa-user"></a>
       </li>
     </ul>
   </div>

@@ -5,6 +5,7 @@ import {HomeComponent} from "./components/home/home.component";
 import {AuthenticationGuard} from "./guards/authentication.guard";
 import {ProductsComponent} from "./components/products/products.component";
 import {CartComponent} from "./components/cart/cart.component";
+import {CommentComponent} from "./components/comment/comment.component";
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent
+  },
+  {
+    path: 'comment',
+    component: CommentComponent
   },
   {
     path: 'blog',

@@ -9,7 +9,14 @@ import {CartService} from "../../../root-browser/services/cart.service";
 export class TopNavComponent implements OnInit {
 
   public totalItem : number = 0;
+  public searchTerm : string = '';
   @Input() headerTitle: string;
+
+  showMe:boolean=false;
+
+  toggleTag() {
+    this.showMe=!this.showMe
+  }
 
   constructor(private cartService: CartService) { }
 
@@ -19,4 +26,9 @@ export class TopNavComponent implements OnInit {
     })
   }
 
+  search(event:any) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.cartService.search.next(this.searchTerm);
+  }
 }
