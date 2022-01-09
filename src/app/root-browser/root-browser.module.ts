@@ -27,6 +27,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import {MatInputModule} from "@angular/material/input";
 import {adminService} from "./services/admin.service";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { BillingComponent } from './components/billing/billing.component';
+import { UserManagementComponent } from './components/user-management/user-management.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     CartComponent,
     CommentComponent,
     FilterPipe,
-    CheckoutComponent
+    CheckoutComponent,
+    BillingComponent,
+    UserManagementComponent
 
   ],
     imports: [

@@ -7,6 +7,8 @@ import {ProductsComponent} from "./components/products/products.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {CommentComponent} from "./components/comment/comment.component";
 import {CheckoutComponent} from "./components/checkout/checkout.component";
+import {BillingComponent} from "./components/billing/billing.component";
+import {UserManagementComponent} from "./components/user-management/user-management.component";
 
 
 
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path: 'comment',
     component: CommentComponent
+  },
+  {
+    path: 'billing',
+    component: BillingComponent
+  },
+  {
+    path: 'users',
+    component: UserManagementComponent
   },
   {
     path: 'admin',
