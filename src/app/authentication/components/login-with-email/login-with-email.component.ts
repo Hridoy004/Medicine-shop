@@ -63,7 +63,7 @@ export class LoginWithEmailComponent implements OnInit {
               if(this.redirect) {
                 this.router.navigate([this.redirect]);
               } else {
-                this.router.navigate(['/blog']);
+                this.router.navigate(['/category']);
               }
             } else {
               this.showToast(response.message);

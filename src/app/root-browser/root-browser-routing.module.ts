@@ -6,6 +6,8 @@ import {AuthenticationGuard} from "./guards/authentication.guard";
 import {ProductsComponent} from "./components/products/products.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {CommentComponent} from "./components/comment/comment.component";
+import {CheckoutComponent} from "./components/checkout/checkout.component";
+
 
 
 const routes: Routes = [
@@ -22,8 +24,16 @@ const routes: Routes = [
     component: CartComponent
   },
   {
+    path: 'checkout',
+    component: CheckoutComponent
+  },
+  {
     path: 'comment',
     component: CommentComponent
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('../app-admin/app-admin.module').then(m => m.AppAdminModule)
   },
   {
     path: 'blog',

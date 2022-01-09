@@ -1,0 +1,65 @@
+<div style="margin-top: 20px; padding: 0px;">
+  <div class="d-flex">
+    <button (click)="toggleTag()"  type="button" class="btn btn-success" >Admin profile</button>
+  </div>
+
+  <table class="table mt-3">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email ID</th>
+      <th scope="col">Mobile No.</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor='let us of readData'>
+      <td>{{us.id}}</td>
+      <td>{{us.firstName}}</td>
+      <td>{{us.LastName}}</td>
+      <td>{{us.email}}</td>
+      <td>{{us.number}}</td>
+      <td>
+        <button class="btn btn-info mx-3">Admin</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <div id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="showMe">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Admin profile</h5>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="userForm" (ngSubmit)="onUserFormSubmit()">
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input matInput formControlName="FirstName" type="text"  class="form-control" id="firstName" aria-describedby="emailHelp">
+            </div><div class="mb-3">
+
+            <label for="lastName" class="form-label">Last Name</label>
+            <input matInput formControlName="LastName" type="text" class="form-control" id="lastName" aria-describedby="emailHelp">
+          </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input matInput formControlName="Email" type="email"  class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="pass" class="form-label">Number</label>
+              <input matInput formControlName="Number" type="number" class="form-control" id="pass">
+            </div>
+            <button mat-raised-button color="primary" class="margin-top-16" [disabled]="userForm.invalid" (click)="openSnackBar()" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

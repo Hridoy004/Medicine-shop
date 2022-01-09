@@ -11,10 +11,12 @@ export class BackendService {
 
   baseUrl = 'http://localhost:3000';
 
+
   constructor(private httpClient: HttpClient,
               private sessionService: SessionService) {
 
   }
+
 
   register(payload: any) {
     let registrationUrl = `${this.baseUrl}/register`;
@@ -33,4 +35,18 @@ export class BackendService {
     return this.httpClient.get(userDetailsUrl, {headers: headers});
   }
 
+  check(payload: any) {
+    let userDetailsUrl = `${this.baseUrl}/check`;
+    return this.httpClient.post(userDetailsUrl, payload);
+  }
+
+  admin(payload: any) {
+    let adminsUrl = `${this.baseUrl}/admin`;
+    return this.httpClient.post(adminsUrl, payload);
+  }
+
+  contact(payload: any) {
+    let contactsUrl = `${this.baseUrl}/contact`;
+    return this.httpClient.post(contactsUrl, payload);
+  }
 }

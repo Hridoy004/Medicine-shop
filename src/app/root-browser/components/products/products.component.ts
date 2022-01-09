@@ -21,8 +21,8 @@ export class ProductsComponent implements OnInit {
       this.productList.forEach((a:any) => {
         a.comment = "";
         a.postComment = [];
-        if(a.category ==="Beximco" || a.category ==="Antiseptics"){
-          a.category ="all"
+        if(a.category ==="Beximco" || a.category ==="all"){
+          a.category ="Antiseptics"
         }
         Object.assign(a,{quantity:1,total:a.price});
       });

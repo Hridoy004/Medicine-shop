@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,10 @@ export class CartService {
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
+    cartTotal$: any;
+  cartDataObs$: any;
 
-  constructor() { }
+  constructor( private snackBar : MatSnackBar) { }
   getProducts(){
     return this.productList.asObservable();
   }
@@ -19,10 +22,18 @@ export class CartService {
     this.cartItemList.push(...product);
     this.productList.next(product);
   }
+
+  openSnackBar() {
+    this.snackBar.open('Item added', '',{duration: 3000});
+  }
+
+
   addtoCart(product : any){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
+    this.openSnackBar();
+    //this.showToast(product.message);
     console.log(this.cartItemList)
   }
   getTotalPrice() : number{

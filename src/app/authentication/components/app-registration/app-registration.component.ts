@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {BackendService} from "../../../root-browser/services/backend.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
+;
 
 @Component({
   selector: 'app-app-registration',
@@ -21,7 +23,8 @@ export class AppRegistrationComponent implements OnInit {
     PhoneNumber: new FormControl('', [Validators.required, Validators.minLength(10)]),
   })
 
-  constructor(private backendService: BackendService) {
+  constructor(private backendService: BackendService,
+              private snackBar: MatSnackBar) {
 
   }
 
@@ -37,4 +40,7 @@ export class AppRegistrationComponent implements OnInit {
       }
   }
 
+  openSnackBar() {
+    this.snackBar.open('Registration complete', '',{duration: 3000});
+  }
 }

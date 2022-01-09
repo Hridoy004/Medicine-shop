@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RootBrowserRoutingModule } from './root-browser-routing.module';
 import { RootDefaultComponent } from './components/root-default/root-default.component';
 import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { Error404Component } from './components/error404/error404.component';
 import {AppGenericsModule} from "../app-generics/app-generics.module";
 import {HttpClientModule} from "@angular/common/http";
@@ -23,7 +23,10 @@ import {MatIconModule} from "@angular/material/icon";
 import { CommentComponent } from './components/comment/comment.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { FilterPipe } from './shared/filter.pipe';
-
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import {MatInputModule} from "@angular/material/input";
+import {adminService} from "./services/admin.service";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { FilterPipe } from './shared/filter.pipe';
     CartComponent,
     CommentComponent,
     FilterPipe,
+    CheckoutComponent
+
   ],
     imports: [
         BrowserModule,
@@ -44,7 +49,10 @@ import { FilterPipe } from './shared/filter.pipe';
         BrowserAnimationsModule,
         MatButtonModule,
         MatIconModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatSnackBarModule
     ],
   providers: [
     BlogService,
@@ -53,7 +61,8 @@ import { FilterPipe } from './shared/filter.pipe';
     AuthenticationGuard,
     UserService,
     ProductService,
-    CartService
+    CartService,
+    adminService
   ],
   bootstrap: [
     RootDefaultComponent
