@@ -9,11 +9,13 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {FlexModule} from "@angular/flex-layout";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 
 
 @NgModule({
   declarations: [
-    ContactSectionComponent
+    ContactSectionComponent,
+    ContactInfoComponent
   ],
   imports: [
     CommonModule,

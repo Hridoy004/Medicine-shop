@@ -1,26 +1,26 @@
 <div style="margin-top: 100px" class="billing-form-wrapper">
   <div class="d-flex">
-    <h1>User Management</h1>
+    <h1>Contact Information</h1>
   </div>
 
   <table class="table mt-3">
     <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
+      <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Mobile No.</th>
+      <th scope="col">Message</th>
     </tr>
     </thead>
 
     <tbody>
     <tr *ngFor='let us of readData'>
-      <td>{{us.id}}</td>
-      <td>{{us.FirstName}}</td>
-      <td>{{us.LastName}}</td>
+      <td>{{us.Id}}</td>
+      <td>{{us.Name}}</td>
       <td>{{us.Email}}</td>
       <td>{{us.PhoneNumber}}</td>
+      <td>{{us.Message}}</td>
     </tr>
     </tbody>
   </table>
